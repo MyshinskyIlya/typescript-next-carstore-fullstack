@@ -12,7 +12,7 @@ const Footer = () => {
                         All rights reserved &copy;
                     </p>
                 </div>
-                <div className="footer__links"></div>
+                <div className="footer__links">links</div>
             </div>
         </footer>
     );
