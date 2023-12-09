@@ -1,7 +1,6 @@
 "use client";
 
 import React, { FC } from "react";
-import Image from "next/image";
 import { CustomButtonProps } from "@/types";
 
 const CustomButton: FC<CustomButtonProps> = ({

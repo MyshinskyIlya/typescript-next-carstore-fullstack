@@ -25,7 +25,7 @@ const Hero = () => {
                     Explore Cars
                 </CustomButton>
             </div>
-            <div className="hero__image-container">
+            <div className="hero__image-container block">
                 <div className="hero__image">
                     <Image
                         src="/hero.png"
@@ -33,8 +33,8 @@ const Hero = () => {
                         fill
                         className="object-contain"
                     ></Image>
-                    <div className="hero__image-overlay"></div>
                 </div>
+                <div className="hero__image-overlay"></div>
             </div>
         </section>
     );
