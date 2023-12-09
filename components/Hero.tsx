@@ -3,10 +3,9 @@
 import React from "react";
 import { CustomButton } from ".";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
-    const handleScroll = () => {};
-
     return (
         <section className="hero">
             <div className="flex-1 pt-36 padding-x">
@@ -18,12 +17,11 @@ const Hero = () => {
                     booking process.
                 </p>
 
-                <CustomButton
-                    containerStyles="bg-primary-blue text-white rounded-full mt-10"
-                    handleClick={handleScroll}
-                >
-                    Explore Cars
-                </CustomButton>
+                <Link href={"#discover"}>
+                    <CustomButton containerStyles="bg-primary-blue text-white rounded-full mt-10">
+                        Explore Cars
+                    </CustomButton>
+                </Link>
             </div>
             <div className="hero__image-container block">
                 <div className="hero__image">
