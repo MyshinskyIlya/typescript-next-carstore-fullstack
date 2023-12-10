@@ -32,9 +32,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer__copyrights flex items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10 sm:gap-2">
-                <div className="sm:mr-0 mr-8">
-                    @2023 CarHub. All Rights Reserved
-                </div>
+                <div className="md:mr-8">@2023 CarHub. All Rights Reserved</div>
                 <div className="footer__copyrights-link">
                     <Link href={"/"} className="text-[#666666]">
                         Privacy Policy
