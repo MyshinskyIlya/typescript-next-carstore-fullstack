@@ -1,5 +1,9 @@
 import { MouseEventHandler, ReactNode } from "react";
 
+export interface HomeProps {
+    searchParams: FilterProps;
+}
+
 export interface CustomButtonProps {
     children: ReactNode;
     containerStyles?: string;
@@ -9,8 +13,14 @@ export interface CustomButtonProps {
     isDisable?: boolean;
 }
 
+export interface FuelsProp {
+    title: string;
+    value: string;
+}
+
 export interface CustomFilterProps {
     title?: "fuel" | "year";
+    options: FuelsProp[];
 }
 
 export interface SearchManufacturerProps {

@@ -29,7 +29,7 @@ const SearchBar = () => {
         e.preventDefault();
 
         if (manufacturer !== "" && model !== "") {
-            const updateSearchParams = (
+            const updateCarSearchParams = (
                 model: string,
                 manufacturer: string
             ) => {
@@ -56,7 +56,7 @@ const SearchBar = () => {
                 router.push(newPathName);
             };
 
-            updateSearchParams(
+            updateCarSearchParams(
                 model.toLowerCase(),
                 manufacturer.toLocaleLowerCase()
             );
@@ -88,6 +88,8 @@ const SearchBar = () => {
                         onChange={(e) => setModel(e.target.value)}
                         placeholder="Tiguan"
                         className="searchbar__input"
+                        autoComplete="off"
+                        required
                     />
                     <SearchButton otherClasses="max-sm:block"></SearchButton>
                 </div>

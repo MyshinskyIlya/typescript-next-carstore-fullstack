@@ -1,13 +1,15 @@
 import { CarCard, CustomFilter, Hero, SearchBar } from "@/components";
+import { fuels, yearsOfProduction } from "@/constants";
+import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 
-export default async function Home({ searchParams }: { searchParams: any }) {
+export default async function Home({ searchParams }: HomeProps) {
     const allCars = await fetchCars({
         manufacturer: searchParams.manufacturer || "",
         year: searchParams.year || 2022,
         fuel: searchParams.fuel || "",
         limit: searchParams.limit || 10,
-        model: searchParams.model || "",
+        model: searchParams.model || "Tiguan",
     });
 
     console.log(allCars);
@@ -29,8 +31,14 @@ export default async function Home({ searchParams }: { searchParams: any }) {
                 <div className="home__filters">
                     <SearchBar></SearchBar>
                     <div className="home__filter-container">
-                        <CustomFilter title="fuel"></CustomFilter>
-                        <CustomFilter title="year"></CustomFilter>
+                        <CustomFilter
+                            title="fuel"
+                            options={fuels}
+                        ></CustomFilter>
+                        <CustomFilter
+                            title="year"
+                            options={yearsOfProduction}
+                        ></CustomFilter>
                     </div>
                 </div>
 
@@ -45,7 +53,7 @@ export default async function Home({ searchParams }: { searchParams: any }) {
                 ) : (
                     <div className="home__error-container">
                         <h2 className="text-black text-xl font-bold">
-                            OOps, no results
+                            Oops, no results
                         </h2>
                         <p>{allCars?.message}</p>
                     </div>
