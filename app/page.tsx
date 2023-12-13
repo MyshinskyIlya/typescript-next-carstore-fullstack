@@ -24,7 +24,7 @@ export default async function Home({ searchParams }: HomeProps) {
                 <title>Моя Страница</title>
                 <meta
                     name="viewport"
-                    content="width=device-width, initial-scale=1 maximum-scale-1"
+                    content="width=device-width, initial-scale=1 maximum-scale-1 user-scalable=no"
                 />
             </Head>
             <Hero></Hero>
