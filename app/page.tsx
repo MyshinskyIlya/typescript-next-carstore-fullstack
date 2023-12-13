@@ -1,9 +1,11 @@
-import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
+import { CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
 import { fuels, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 import Head from "next/head";
 import type { Viewport } from "next";
+import dynamic from "next/dynamic";
+import { Spinner } from "@material-tailwind/react";
 
 export const viewport: Viewport = {
     width: "device-width",
@@ -11,6 +13,23 @@ export const viewport: Viewport = {
     maximumScale: 1,
     userScalable: false,
 };
+
+const DynamicCars = dynamic(() => import("../components/CarCard"), {
+    ssr: false,
+    loading: () => (
+        <div className="border border-blue-300 shadow rounded-xl p-6 max-w-sm w-full mx-auto">
+            <div className="animate-pulse flex flex-col justify-center">
+                <div className="flex-1 justify-center align-super mt-1 ">
+                    <div className=" bg-slate-300 py-4 rounded-xl mb-6"></div>
+                    <div className="rounded-full bg-slate-300 h-14 w-24 mt-2 p-2 text-start"></div>
+
+                    <div className="rounded-xl bg-slate-300 h-28 w-full mt-6 p-2 text-center"></div>
+                    <div className="mt-8 h-14 bg-slate-300 py-6 rounded-xl"></div>
+                </div>
+            </div>
+        </div>
+    ),
+});
 
 export default async function Home({ searchParams }: HomeProps) {
     const allCars = await fetchCars({
@@ -65,12 +84,12 @@ export default async function Home({ searchParams }: HomeProps) {
                         <section>
                             <div className="home__cars-wrapper">
                                 {allCars?.map((car, index, arr) => (
-                                    <CarCard
+                                    <DynamicCars
                                         key={index}
                                         car={car}
                                         index={index}
                                         limit={arr.length - 1}
-                                    ></CarCard>
+                                    ></DynamicCars>
                                 ))}
                             </div>
                             <ShowMore

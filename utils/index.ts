@@ -66,3 +66,12 @@ export const updateSearchParams = (type: string, value: string) => {
 
     return newPathname;
 };
+
+// export default async function Home({ searchParams }: HomeProps) {
+//     const allCars = await fetchCars({
+//         manufacturer: searchParams.manufacturer || "",
+//         year: searchParams.year || 2022,
+//         fuel: searchParams.fuel || "",
+//         limit: searchParams.limit || 30,
+//         model: searchParams.model || "",
+//     });
