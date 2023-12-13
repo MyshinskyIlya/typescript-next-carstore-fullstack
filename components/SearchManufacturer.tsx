@@ -36,10 +36,11 @@ const SearchManufacturer: FC<SearchManufacturerProps> = ({
                         ></Image>
                     </Combobox.Button>
                     <Combobox.Input
-                        className="search-manufacturer__input"
+                        className="search-manufacturer__input relative"
                         placeholder="Volkswagen"
                         displayValue={(manufacturer: string) => manufacturer}
                         onChange={(e) => setQuery(e.target.value)}
+                        required
                     ></Combobox.Input>
 
                     <Transition
@@ -49,13 +50,17 @@ const SearchManufacturer: FC<SearchManufacturerProps> = ({
                         leaveTo="oppacity-0"
                         afterLeave={() => setQuery("")}
                     >
-                        <Combobox.Options>
+                        <Combobox.Options
+                            className={
+                                "absolute top-12 left-0 bg-white rounded-lg shadow-xl w-full z-10 max-h-52 overflow-y-scroll"
+                            }
+                        >
                             {filteredManufacturers.map((item) => (
                                 <Combobox.Option
                                     key={item}
                                     value={item}
                                     className={({ active }) =>
-                                        `relative search-manufacturer__option ${
+                                        `search-manufacturer__option relative ${
                                             active
                                                 ? "bg-primary-blue text-white"
                                                 : "text-[#666666]"
