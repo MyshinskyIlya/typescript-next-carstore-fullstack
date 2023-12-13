@@ -15,13 +15,13 @@ const SearchButton: FC<SearchButtonProps> = ({
         <button
             ref={ref}
             type="submit"
-            className={`-ml-3 z-10 ${otherClasses}`}
+            className={`-ml-4 z-10 ${otherClasses}`}
         >
             <Image
                 src={"/magnifying-glass.svg"}
                 alt="Mag Glass"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className="object-contain"
             ></Image>
         </button>
@@ -79,7 +79,6 @@ const SearchBar = () => {
                         manufacturer={manufacturer}
                         setManufacturer={setManufacturer}
                     ></SearchManufacturer>
-                    <SearchButton otherClasses="sm:hidden"></SearchButton>
                 </div>
                 <div className="searchbar__item">
                     <Image
@@ -99,8 +98,14 @@ const SearchBar = () => {
                         autoComplete="off"
                         required
                     />
-                    <SearchButton otherClasses="max-sm:block"></SearchButton>
+                    <SearchButton otherClasses="hidden sm:block"></SearchButton>
                 </div>
+                <button
+                    type="submit"
+                    className="w-full bg-primary-blue p-2 rounded-xl text-white font-medium md:hidden"
+                >
+                    Find a Car
+                </button>
             </form>
         </>
     );
