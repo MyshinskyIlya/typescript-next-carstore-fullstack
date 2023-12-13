@@ -20,6 +20,13 @@ export default async function Home({ searchParams }: HomeProps) {
 
     return (
         <main className="overflow-hidden">
+            <Head>
+                <title>Моя Страница</title>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1 maximum-scale-1"
+                />
+            </Head>
             <Hero></Hero>
             <div className="mt-12 padding-x padding-y max-width" id="discover">
                 <div className="home__text-container">
