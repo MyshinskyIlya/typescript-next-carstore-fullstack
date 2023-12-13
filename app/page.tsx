@@ -5,7 +5,6 @@ import { fetchCars } from "@/utils";
 import Head from "next/head";
 import type { Viewport } from "next";
 import dynamic from "next/dynamic";
-import { Spinner } from "@material-tailwind/react";
 
 export const viewport: Viewport = {
     width: "device-width",
