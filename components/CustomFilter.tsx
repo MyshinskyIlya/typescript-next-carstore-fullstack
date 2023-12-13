@@ -17,7 +17,7 @@ const CustomFilter: FC<CustomFilterProps> = ({ title, options }) => {
 
             const newPathname = `${
                 window.location.pathname
-            }?${searchParams.toString()}#discover`;
+            }?${searchParams.toString()}`;
 
             return newPathname;
         };
@@ -27,7 +27,7 @@ const CustomFilter: FC<CustomFilterProps> = ({ title, options }) => {
             e.value.toLowerCase()
         );
 
-        router.push(newPathName);
+        router.push(newPathName, { scroll: false });
     };
 
     return (

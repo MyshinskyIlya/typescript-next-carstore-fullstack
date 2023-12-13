@@ -6,7 +6,7 @@ import Image from "next/image";
 import React, { FC, useState } from "react";
 import { CustomButton, CarDetails } from ".";
 
-const CarCard: FC<CarCardProps> = ({ car }) => {
+const CarCard: FC<CarCardProps> = ({ car, index, limit }) => {
     const { city_mpg, year, make, model, transmission, drive } = car;
     const [isOpen, setIsOpen] = useState(false);
 

@@ -45,6 +45,8 @@ export interface CarsProp {
 
 export interface CarCardProps {
     car: CarsProp;
+    index: number;
+    limit: number;
 }
 
 export interface CarDetailsProps {
@@ -56,6 +58,7 @@ export interface CarDetailsProps {
 export interface SearchButtonProps {
     children?: ReactNode;
     otherClasses?: string;
+    ref?: any;
 }
 
 export interface FilterProps {
@@ -64,4 +67,9 @@ export interface FilterProps {
     fuel?: string;
     limit?: number;
     model?: string;
+}
+
+export interface ShowMoreProps {
+    pageNumber: number;
+    isNext: boolean;
 }

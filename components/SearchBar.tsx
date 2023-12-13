@@ -6,9 +6,17 @@ import { SearchButtonProps } from "@/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const SearchButton: FC<SearchButtonProps> = ({ children, otherClasses }) => {
+const SearchButton: FC<SearchButtonProps> = ({
+    children,
+    otherClasses,
+    ref,
+}) => {
     return (
-        <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
+        <button
+            ref={ref}
+            type="submit"
+            className={`-ml-3 z-10 ${otherClasses}`}
+        >
             <Image
                 src={"/magnifying-glass.svg"}
                 alt="Mag Glass"
@@ -51,9 +59,9 @@ const SearchBar = () => {
 
                 const newPathName = `${
                     window.location.pathname
-                }?${searchParams.toString()}#discover`;
+                }?${searchParams.toString()}`;
 
-                router.push(newPathName);
+                router.push(newPathName, { scroll: false });
             };
 
             updateCarSearchParams(
