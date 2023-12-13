@@ -78,7 +78,7 @@ const CarCard: FC<CarCardProps> = ({ car }) => {
                 </div>
                 <div className="car-card__btn-container">
                     <CustomButton
-                        containerStyles="w-full  py-[16px] bg-primary-blue rounded-full text-[14px] text-white leading-[17px] font-semibold"
+                        containerStyles="w-full py-[16px] bg-primary-blue rounded-full text-[14px] text-white leading-[17px] font-semibold"
                         rightIcon={"/right-arrow.svg"}
                         handleClick={openModal}
                     >
